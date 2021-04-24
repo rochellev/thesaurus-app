@@ -14,9 +14,9 @@ I am inspired by how Apple Watch makes use of scale transforms in their app draw
 
 <div align="center">
 
-<img src="images/bubbles-init.jpeg" alt="input section" width="66%"/>
-<img src="images/bubbles-one-level.jpeg" alt="output section" width="66%"/>
-<img src="images/bubbles-two-levels.jpeg" alt="output section" width="66%"/>
+<img src="images/bubbles-init.jpeg" alt="input section" width="30%"/>
+<img src="images/bubbles-one-level.jpeg" alt="output section" width="60%"/>
+<img src="images/bubbles-two-levels.jpeg" alt="output section" width="100%"/>
 
 </div>
 <br>
