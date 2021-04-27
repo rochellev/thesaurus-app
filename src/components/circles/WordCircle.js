@@ -4,7 +4,7 @@ import "./WordCircle.css";
 
 const WordCircle = props => {
   return (
-    <WordContainer>
+    <WordContainer >
       <text>{props.word}</text>
     </WordContainer>
   );
