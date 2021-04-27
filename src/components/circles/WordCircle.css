@@ -1,0 +1,10 @@
+/* base circle container */
+
+.circle-container {
+  display: flex;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: var(--powder-blue);
+  flex-direction: column;
+}

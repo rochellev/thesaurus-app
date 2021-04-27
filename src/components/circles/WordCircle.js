@@ -1,10 +1,12 @@
 import React from "react";
+import WordContainer from "./WordContainer";
+import "./WordCircle.css";
 
 const WordCircle = props => {
   return (
-    <div>
+    <WordContainer>
       <text>{props.word}</text>
-    </div>
+    </WordContainer>
   );
 };
 

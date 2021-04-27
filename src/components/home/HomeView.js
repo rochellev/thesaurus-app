@@ -138,7 +138,7 @@ const data = {
 const HomeView = () => {
   return (
     <div>
-      <WordCircle word="cool" />
+      <WordCircle word={data.headword} />
     </div>
   );
 };
