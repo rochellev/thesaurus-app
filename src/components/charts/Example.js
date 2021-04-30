@@ -10,13 +10,14 @@ function Example(props) {
   const chart = useRef(null);
 
   useLayoutEffect(() => {
+    // create chart instance
     let x = am4core.create("chartdiv", am4charts.XYChart);
 
     x.paddingRight = 20;
 
     let data = [];
     let visits = 10;
-
+    // add data
     for (let i = 1; i < 366; i++) {
       visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
       data.push({
@@ -34,7 +35,7 @@ function Example(props) {
     let valueAxis = x.yAxes.push(new am4charts.ValueAxis());
     valueAxis.tooltip.disabled = true;
     valueAxis.renderer.minWidth = 35;
-
+    // create line chart series
     let series = x.series.push(new am4charts.LineSeries());
     series.dataFields.dateX = "date";
     series.dataFields.valueY = "value";
