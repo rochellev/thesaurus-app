@@ -1,10 +1,10 @@
 import "./App.css";
 import HomeView from "./home/HomeView";
-
+import Example from "./charts/Example";
 const App = () => {
   return (
     <div className="App">
-      <text>This is App</text>
+      <Example />
       <HomeView />
     </div>
   );
