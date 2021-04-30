@@ -52,6 +52,11 @@ function Example(props) {
     };
   }, []);
 
+  // When the paddingRight prop changes it will update the chart
+  useLayoutEffect(() => {
+    chart.current.paddingRight = props.paddingRight;
+  }, [props.paddingRight]);
+
   return <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>;
 }
 export default Example;
