@@ -1,11 +1,11 @@
 import "./App.css";
 import HomeView from "./home/HomeView";
-import Example from "./charts/Example";
+import VennDiagram from "./charts/VennDiagram";
 const App = () => {
   return (
     <div className="App">
-      <Example />
-      <HomeView />
+      <VennDiagram />
+      {/* <HomeView /> */}
     </div>
   );
 };
