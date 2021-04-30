@@ -136,8 +136,18 @@ const data = {
 };
 
 const HomeView = () => {
+  const getWordVal = word => {
+    let sum = 0;
+    for (let i = 0; i < word.length; i++) {
+      sum += word.charCodeAt(i);
+    }
+    return sum;
+  };
   return (
     <div>
+      <div>
+        {data.headword} value is {getWordVal(data.headword)}
+      </div>
       <WordCircle word={data.headword} />
     </div>
   );
