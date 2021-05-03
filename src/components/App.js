@@ -5,7 +5,7 @@ import ForcedDirectedTree from './charts/ForceDirectedTree';
 const App = () => {
   return (
     <div className="App">
-   <ForcedDirectedTree />
+   <HomeView />
     </div>
   );
 };
