@@ -128,6 +128,12 @@ const ForceDirectedTree = () => {
     series.fontSize = 10;
     series.minRadius = 15;
     series.maxRadius = 40;
+
+    // set current, not sure if needed
+    chart.current = x;
+    return () => {
+      x.dispose();
+    };
   });
 
   return <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div>;
