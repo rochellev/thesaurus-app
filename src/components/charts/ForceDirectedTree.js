@@ -3,6 +3,8 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 
 const ForceDirectedTree = () => {
+
+  
   // Create chart
   var chart = am4core.create(
     "chartdiv",
