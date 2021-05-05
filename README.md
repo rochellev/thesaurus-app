@@ -26,11 +26,10 @@ Thesaurus in a fun visual form. I found myself using a thesaurus daily for many 
 
 1. Proof of Concept:
    Using [amCharts](https://www.amcharts.com/docs/v4/) to build a tree graph, I successfully generated a graph with sample word data.
+   <div align="center">
+   <img src="images/HomeView1.png" alt="screenshot of a word tree graph" width="90%"/>
+    </div>
+    <br>
    Now that I know how to make a basic graph, I can move on to more complex graph behavior. For example:
-   - How will the graph grow?
-   - How can users select the sense or definition of their search word?
-
-<div align="center">
-<img src="images/HomeView.png" alt="screenshot of a word tree graph" width="90%"/>
-</div>
-<br>
+     - How will the graph grow?
+     - How can users select the sense or definition of their search word?
