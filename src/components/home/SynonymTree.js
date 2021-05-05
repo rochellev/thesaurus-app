@@ -10,7 +10,7 @@ am4core.useTheme(am4themes_animated);
 const SynonymTree = seriesData => {
   const chart = useRef(null);
   useEffect(() => {
-    // console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
+    console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",
@@ -23,102 +23,7 @@ const SynonymTree = seriesData => {
     );
 
     // Set data
-    series.data = [
-      {
-        name: "First",
-        children: [
-          {
-            name: "A1",
-            value: 100
-          },
-          {
-            name: "A2",
-            value: 60
-          },
-          {
-            name: "A3",
-            value: 30
-          }
-        ]
-      },
-      {
-        name: "Second",
-        children: [
-          {
-            name: "B1",
-            value: 135
-          },
-          {
-            name: "B2",
-            value: 98
-          },
-          {
-            name: "B3",
-            value: 56
-          }
-        ]
-      },
-      {
-        name: "Third",
-        children: [
-          {
-            name: "C1",
-            value: 335
-          },
-          {
-            name: "C2",
-            value: 148
-          },
-          {
-            name: "C3",
-            value: 126
-          },
-          {
-            name: "C4",
-            value: 26
-          }
-        ]
-      },
-      {
-        name: "Fourth",
-        children: [
-          {
-            name: "D1",
-            value: 415
-          },
-          {
-            name: "D2",
-            value: 148
-          },
-          {
-            name: "D3",
-            value: 89
-          },
-          {
-            name: "D4",
-            value: 64
-          },
-          {
-            name: "D5",
-            value: 16
-          }
-        ]
-      },
-      {
-        name: "Fifth",
-        children: [
-          {
-            name: "E1",
-            value: 687
-          },
-          {
-            name: "E2",
-            value: 148
-          }
-        ]
-      }
-    ];
-
+    series.data = seriesData.seriesData;
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
