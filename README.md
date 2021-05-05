@@ -1,4 +1,4 @@
-# WordBubbles: A Visual Thesaurus Web App
+# Thesaurus Web App: Answering the question of how to show the relationships between a word and its synonyms
 
 ## Rochelle Roberts Crain
 
