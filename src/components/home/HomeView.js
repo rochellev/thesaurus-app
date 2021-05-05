@@ -144,10 +144,21 @@ const HomeView = () => {
     }
     return sum;
   };
+  // chart expects numerical value, convert string to val
+  const transformedData = (word, synonymArray) => {
+    let result = { name: word, children: [] };
+    for (let word of synonymArray) {
+      result.children.push({ name: word, value: getWordVal(word) });
+    }
+    // console.log(`transformedData: ${JSON.stringify(result)}`);
+    return result;
+  };
 
   return (
     <div>
-      <SynonymTree />
+      <SynonymTree
+        seriesData={transformedData(data.headword, data.syn_list[0].syns)}
+      />
     </div>
   );
 };
