@@ -7,9 +7,10 @@ import "../App.css";
 
 am4core.useTheme(am4themes_animated);
 
-const SynonymTree = () => {
+const SynonymTree = seriesData => {
   const chart = useRef(null);
   useEffect(() => {
+    // console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",
