@@ -1,5 +1,6 @@
 import React from "react";
 import WordCircle from "../circles/WordCircle";
+import SynonymTree from "./SynonymTree";
 
 // sample input: cool
 const data = {
@@ -143,13 +144,10 @@ const HomeView = () => {
     }
     return sum;
   };
-  
+
   return (
     <div>
-      <div>
-        {data.headword} value is {getWordVal(data.headword)}
-      </div>
-      <WordCircle word={data.headword} />
+      <SynonymTree />
     </div>
   );
 };
