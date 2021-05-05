@@ -143,6 +143,7 @@ const HomeView = () => {
     }
     return sum;
   };
+  
   return (
     <div>
       <div>
