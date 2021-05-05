@@ -1,5 +1,6 @@
 import React from "react";
 import WordCircle from "../circles/WordCircle";
+import SynonymTree from "./SynonymTree";
 
 // sample input: cool
 const data = {
@@ -143,12 +144,21 @@ const HomeView = () => {
     }
     return sum;
   };
+  // chart expects numerical value, convert string to val
+  const transformedData = (mainWord, synonymArray) => {
+    let result = [{ name: mainWord, children: [] }];
+    for (let word of synonymArray) {
+      result[0].children.push({ name: word, value: getWordVal(word) });
+    }
+    // console.log(`transformedData: ${JSON.stringify(result)}`);
+    return result;
+  };
+
   return (
     <div>
-      <div>
-        {data.headword} value is {getWordVal(data.headword)}
-      </div>
-      <WordCircle word={data.headword} />
+      <SynonymTree
+        seriesData={transformedData(data.headword, data.syn_list[0].syns)}
+      />
     </div>
   );
 };
