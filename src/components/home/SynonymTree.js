@@ -31,7 +31,7 @@ const SynonymTree = seriesData => {
 
     // Add labels
     series.nodes.template.label.text = "{name}";
-    series.fontSize = 27;
+    series.fontSize = 18;
     series.minRadius = 65;
     series.maxRadius = 100;
 
@@ -40,7 +40,7 @@ const SynonymTree = seriesData => {
     return () => {
       x.dispose();
     };
-  });
+  }, [seriesData]);
   return <div id="chartdiv" style={{ width: "100%", height: "800px" }}></div>;
 };
 
