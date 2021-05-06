@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
-import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import "../App.css";
@@ -10,7 +9,7 @@ am4core.useTheme(am4themes_animated);
 const SynonymTree = seriesData => {
   const chart = useRef(null);
   useEffect(() => {
-    console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
+    // console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",

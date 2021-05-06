@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import WordCircle from "../circles/WordCircle";
 import SynonymTree from "./SynonymTree";
 
 // sample input: cool
@@ -159,7 +158,7 @@ const HomeView = () => {
     }
 
     setChartData(currData);
-  }, []);
+  }, [chartData, wordData.syn_list]);
 
   return (
     <div>
