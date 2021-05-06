@@ -35,6 +35,10 @@ const SynonymTree = seriesData => {
     series.minRadius = 65;
     series.maxRadius = 100;
 
+    // format nodes
+    series.nodes.template.outerCircle.filters.push(
+      new am4core.DropShadowFilter()
+    );
     // set current, not sure if needed
     chart.current = x;
     return () => {
