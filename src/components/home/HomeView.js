@@ -157,11 +157,22 @@ const HomeView = () => {
     return result;
   };
 
+  // const transformedData = (data, senseIndex) => {
+  //   let result = [{ name: data.headword, children: [] }];
+  //   for (let word of data.syn_list[senseIndex].syns) {
+  //     if (result[0].children.length >= 7) {
+  //       break;
+  //     }
+  //     result[0].children.push({ name: word, value: getWordVal(word) });
+  //   }
+  //   // console.log(`transformedData: ${JSON.stringify(result)}`);
+  //   return result;
+  // };
+
   return (
     <div>
       <br></br>
       <h1>{data.headword}</h1>
-      <h3>({data.syn_list[1].definition})</h3>
       <SynonymTree seriesData={transformedData(data, 1)} />
     </div>
   );
