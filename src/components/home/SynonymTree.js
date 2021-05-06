@@ -29,10 +29,16 @@ const SynonymTree = seriesData => {
     series.dataFields.children = "children";
     series.maxLevels = 2;
 
+    // Create a container
+    // var container = am4core.create("container", am4core.Container);
+    // container.width = am4core.percent(100);
+    // container.height = am4core.percent(100);
+    // container.layout = "vertical";
+
     // Add labels
-    series.nodes.template.label.text = "{name}";
+    series.nodes.template.label.text = "[overflow-wrap: break-word]{name}";
     series.fontSize = 18;
-    series.minRadius = 65;
+    series.minRadius = 70;
     series.maxRadius = 100;
 
     // format nodes
