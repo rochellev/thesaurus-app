@@ -27,6 +27,7 @@ const SynonymTree = seriesData => {
     series.dataFields.value = "value";
     series.dataFields.name = "name";
     series.dataFields.children = "children";
+    series.maxLevels = 2;
 
     // Add labels
     series.nodes.template.label.text = "{name}";
