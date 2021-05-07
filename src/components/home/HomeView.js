@@ -163,7 +163,6 @@ const HomeView = () => {
   return (
     <div>
       <br></br>
-      <h1>{wordData.headword}</h1>
       <SynonymTree seriesData={chartData} />
     </div>
   );
