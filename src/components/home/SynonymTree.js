@@ -35,9 +35,14 @@ const SynonymTree = seriesData => {
     // container.height = am4core.percent(100);
     // container.layout = "vertical";
 
-    // Add labels
-    series.nodes.template.label.text = "[overflow-wrap: break-word]{name}";
-    series.fontSize = 18;
+
+    // Format labels
+    let labelTemplate = series.nodes.template.label;
+    labelTemplate.text = "{name}";
+    labelTemplate.wrap = true;
+    labelTemplate.margin = 5;
+
+    series.fontSize = 22;
     series.minRadius = 70;
     series.maxRadius = 100;
 
