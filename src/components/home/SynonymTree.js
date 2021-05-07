@@ -15,11 +15,21 @@ const SynonymTree = seriesData => {
       "chartdiv",
       am4plugins_forceDirected.ForceDirectedTree
     );
+    // make zoomable
+    x.zoomable = true;
 
     // Create series
     var series = x.series.push(
       new am4plugins_forceDirected.ForceDirectedSeries()
     );
+
+    series.nodes.template.events.on("hit", function(event) {
+      if (event.target.isActive) {
+        x.zoomToDataItem(event.target.dataItem, 2, true);
+      } else {
+        x.zoomOut();
+      }
+    });
 
     // Set data
     series.data = seriesData.seriesData;
@@ -34,7 +44,6 @@ const SynonymTree = seriesData => {
     // container.width = am4core.percent(100);
     // container.height = am4core.percent(100);
     // container.layout = "vertical";
-
 
     // Format labels
     let labelTemplate = series.nodes.template.label;
@@ -56,7 +65,7 @@ const SynonymTree = seriesData => {
       x.dispose();
     };
   }, [seriesData]);
-  return <div id="chartdiv" style={{ width: "100%", height: "800px" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: "1000px" }}></div>;
 };
 
 export default SynonymTree;
