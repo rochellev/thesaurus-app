@@ -1,5 +1,4 @@
-import React from "react";
-import WordCircle from "../circles/WordCircle";
+import React, { useState, useEffect } from "react";
 import SynonymTree from "./SynonymTree";
 
 // sample input: cool
@@ -137,32 +136,34 @@ const data = {
 };
 
 const HomeView = () => {
-  const getWordVal = word => {
-    let sum = 0;
-    for (let i = 0; i < word.length; i++) {
-      sum += word.charCodeAt(i);
+  const [wordData, setWordData] = useState(data);
+  const [chartData, setChartData] = useState([
+    {
+      name: data.headword,
+      children: []
     }
-    return sum;
-  };
-  // chart expects numerical value, convert string to val
-  const transformedData = (data, senseIndex) => {
-    let result = [{ name: data.headword, children: [] }];
-    for (let word of data.syn_list[senseIndex].syns) {
-      if (result[0].children.length >= 7) {
-        break;
+  ]);
+  // run initial
+  useEffect(() => {
+    let currData = chartData;
+    // for each sense
+    // make new obj with def and synonyms
+    // push that to root node children
+    for (let senseObj of wordData.syn_list) {
+      let sense = { name: senseObj.definition, value: 50, children: [] };
+      for (let [i, synonym] of senseObj.syns.entries()) {
+        sense.children.push({ name: synonym, value: i });
       }
-      result[0].children.push({ name: word, value: getWordVal(word) });
+      currData[0].children.push(sense);
     }
-    // console.log(`transformedData: ${JSON.stringify(result)}`);
-    return result;
-  };
+
+    setChartData(currData);
+  }, [chartData, wordData.syn_list]);
 
   return (
     <div>
       <br></br>
-      <h1>{data.headword}</h1>
-      <h3>({data.syn_list[1].definition})</h3>
-      <SynonymTree seriesData={transformedData(data, 1)} />
+      <SynonymTree seriesData={chartData} />
     </div>
   );
 };
