@@ -35,15 +35,27 @@ Thesaurus in a fun visual form. I found myself using a thesaurus daily for many 
      - How can users select the sense or definition of their search word?
 
 Handling Multiple senses of a word:
+
 - At first I thought to have a tree for each sense and tabs for users to nav there. But there are some drawbacks to this approach:
   - tabs do not allow multi-trees view
   - does not make use of the graph's branching off
 - Now, rather than selecting a definition by tabbing, the first set of child nodes are the word's definitions. This has a few benefits:
+
   - user can choose to see as many definitions of a word and the associated synonyms
   - make it clear that each sense of a word might have very different meanings (can see in the example of "cool")
   - this approach makes use of more amChart features
 
    <div align="center">
    <img src="images/HomeView2-wrapped-labels.png" alt="screenshot, nodes have wrapped labels" width="90%"/>
+    </div>
+    <br>
+
+Zooming
+
+- Original plan was to use css to have the zoom in/out effect.
+- Fount amChart has a property for handling this behavior
+- When user clicks on a word sense, zoom around that node and expand the child nodes
+   <div align="center">
+   <img src="images/HomeView3-expanded-sense.png" alt="screenshot, expanded nodes with zoom effect" width="90%"/>
     </div>
     <br>
