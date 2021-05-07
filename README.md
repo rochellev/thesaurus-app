@@ -30,9 +30,15 @@ Thesaurus in a fun visual form. I found myself using a thesaurus daily for many 
    <img src="images/HomeView1.png" alt="screenshot of a word tree graph" width="90%"/>
     </div>
     <br>
-   Now that I know how to make a basic graph, I can move on to more complex graph behavior. For example:
-     - How will the graph grow?
-     - How can users select the sense or definition of their search word?
+
+---
+
+Now that I know how to make a basic graph, I can move on to more complex graph behavior. For example:
+
+- How will the graph grow?
+- How can users select the sense or definition of their search word?
+
+---
 
 Handling Multiple senses of a word:
 
@@ -49,6 +55,8 @@ Handling Multiple senses of a word:
    <img src="images/HomeView2-wrapped-labels.png" alt="screenshot, nodes have wrapped labels" width="90%"/>
     </div>
     <br>
+
+---
 
 Zooming
 
