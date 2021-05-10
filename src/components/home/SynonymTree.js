@@ -49,10 +49,13 @@ const SynonymTree = seriesData => {
     let labelTemplate = series.nodes.template.label;
     labelTemplate.text = "{name}";
     labelTemplate.wrap = true;
-    labelTemplate.margin = 5;
 
-    series.fontSize = 22;
-    series.minRadius = 70;
+    labelTemplate.margin = 5;
+    // labelTemplate.marginLeft = 3;
+    // labelTemplate.marginRight = 3;
+
+    series.fontSize = 20;
+    series.minRadius = 92;
     series.maxRadius = 100;
 
     // format nodes
