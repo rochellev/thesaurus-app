@@ -9,7 +9,8 @@ Thesaurus in a fun visual form. I found myself using a thesaurus daily for many 
 ## Software Design & Implementation
 
 Early Planning
-- I am inspired by how Apple Watch designed their app drawer view to show all the apps by zooming in and out. 
+
+- I am inspired by how Apple Watch designed their app drawer view to show all the apps by zooming in and out.
 - My plan is to use the CSS function `scale()` to have this effect when rendering a growing number of bubbles representing synonyms of a given word.
 - Challenges:
   - rendering the right circle elements in the right spot
@@ -32,7 +33,8 @@ Early Planning
 ---
 
 Proof of Concept:
-   Using [amCharts](https://www.amcharts.com/docs/v4/) to build a tree graph, I successfully generated a graph with sample word data.
+Using [amCharts](https://www.amcharts.com/docs/v4/) to build a tree graph, I successfully generated a graph with sample word data.
+
    <div align="center">
    <img src="images/HomeView1.png" alt="screenshot of a word tree graph" width="90%"/>
     </div>
@@ -70,7 +72,17 @@ Zooming
 - Original plan was to use css to have the zoom in/out effect.
 - Fount amChart has a property for handling this behavior
 - When user clicks on a word sense, zoom around that node and expand the child nodes
+- [amChart Documentation](https://www.amcharts.com/docs/v4/chart-types/force-directed/#Zooming)
    <div align="center">
    <img src="images/HomeView3-expanded-sense.png" alt="screenshot, expanded nodes with zoom effect" width="90%"/>
     </div>
     <br>
+
+---
+
+Merriam-Webster API
+
+- Making calls using secret token
+- Challenges:
+  - re-rendering graph triggering redundant API call
+  - limit calls, faster and have limited free-tier access
