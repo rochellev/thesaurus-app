@@ -83,6 +83,10 @@ Zooming
 Merriam-Webster API
 
 - Making calls using secret token
-- Challenges:
-  - re-rendering graph triggering redundant API call
-  - limit calls, faster and have limited free-tier access
+- Where to make the call? Important to limit calls for performance and maintain budget
+- Options:
+  - In a class component, use `fetch` method in `componentDidMount` then updating state.
+  - For functional components, use `fetch` method in `useEffect` hook then update state.
+  - React-Redux, make api call in an `action`. This would require a little set up, but I have experience using this library.
+- React-Redux is the option I chose because I think it is cleaner than putting everything in a component
+- My experience tells me it is easier to maintain React's "single source of truth" rule with Redux
