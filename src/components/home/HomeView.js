@@ -173,4 +173,4 @@ const mapStateToProps = state => {
     wordData: state.wordData
   };
 };
-export default connect(mapStateToProps, { selectWord })(HomeView);
+export default connect(mapStateToProps)(HomeView);
