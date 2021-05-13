@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import SynonymTree from "./SynonymTree";
-
+import { selectWord } from "../../actions";
 // sample input: cool
 const data = {
   headword: "cool",
@@ -167,5 +168,9 @@ const HomeView = () => {
     </div>
   );
 };
-
-export default HomeView;
+const mapStateToProps = state => {
+  return {
+    wordData: state.wordData
+  };
+};
+export default connect(mapStateToProps, { selectWord })(HomeView);
