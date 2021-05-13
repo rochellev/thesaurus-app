@@ -2,6 +2,7 @@ import {combineReducers} from 'redux';
 
 // returns hard-coded data,
 // eventually will use to call api i think
+// returns object. exactly like data in HomeView
 const wordDataReducer = () => {
  return {
   headword: "cool",
