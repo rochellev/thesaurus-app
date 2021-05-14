@@ -1,0 +1,2 @@
+export const WORD_SELECTED = "WORD_SELECTED";
+export const FETCH_SYNONYMS = "FETCH_SYNONYMS";
