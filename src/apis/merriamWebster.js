@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "https://www.dictionaryapi.com/api/v3/references/thesaurus/json"
 });

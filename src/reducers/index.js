@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+// import synonymReducer from './synonymReducer'
 
 // returns hard-coded data,
 // eventually will use to call api i think
@@ -140,4 +141,5 @@ const wordDataReducer = () => {
 
 export default combineReducers({
   wordData: wordDataReducer
+  
 })
