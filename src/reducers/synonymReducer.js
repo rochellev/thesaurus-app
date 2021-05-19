@@ -4,14 +4,11 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "../actions/types";
 
-
-// export default (state= {}, action) => {
-//   switch (action.type){
-//     case FETCH_SYNONYMS_BEGIN:
-//       return {
-//         ...state, [action.payload]
-//       };
-//       default:
-//         return state
-//   }
-// } 
+export default (state = {}, action) => {
+  switch (action.type) {
+    case FETCH_SYNONYMS_BEGIN:
+      return { ...state, synonyms: action.payload };
+    default:
+      return state;
+  }
+};
