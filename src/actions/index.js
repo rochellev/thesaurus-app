@@ -14,12 +14,12 @@ export const selectWord = word => {
   };
 };
 
-// export const fetchSynonyms = (headword) => {
-//   const response = await merriamWebster.get()
-// }
-
-export const fetchSynonymsBegin = () => {
-  return { type: FETCH_SYNONYMS_BEGIN };
+// get data for headword
+export const fetchSynonymsBegin = headword => async dispatch => {
+  const response = await merriamWebster.get(
+    `&{headword}?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
+  );
+  dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
 };
 
 export const fetchSynonymsSuccess = synonyms => {
@@ -30,10 +30,10 @@ export const fetchSynonymsFail = error => {
   return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
 };
 
-export const fetchData = query => async dispatch => {
-  const response = await merriamWebster.get(
-    `/umpire?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
-  );
-  console.log(`the response: lafjks`);
-  dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
-};
+// export const fetchData = query => async dispatch => {
+//   const response = await merriamWebster.get(
+//     `/umpire?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
+//   );
+//   console.log(`the response: lafjks`);
+//   dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
+// };
