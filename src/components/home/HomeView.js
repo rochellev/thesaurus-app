@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import SynonymTree from "./SynonymTree";
+import { fetchSynonymsBegin } from "../../actions";
 import merriamWebster from "../../apis/merriamWebster";
 
 const HomeView = ({ wordData }) => {
@@ -27,17 +28,9 @@ const HomeView = ({ wordData }) => {
     setChartData(currData);
   }, []);
 
-  const fetchSynonyms = async query => {
-    const response = await merriamWebster.get(
-      `cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`
-    );
-    console.log(JSON.stringify(response, null, 2));
-  };
-
   return (
     <div>
       <br></br>
-      <button onClick={fetchSynonyms}>fetchSynonyms</button>
       <SynonymTree seriesData={chartData} />
     </div>
   );
