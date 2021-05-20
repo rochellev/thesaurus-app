@@ -15,21 +15,21 @@ const HomeView = ({ wordData, synonyms }) => {
   useEffect(() => {
     fetchSynonymsBegin("happy");
   }, []);
-  // useEffect(() => {
-  //   let currData = chartData;
-  //   // for each sense
-  //   // make new obj with def and synonyms
-  //   // push that to root node children
-  //   for (let senseObj of wordData.syn_list) {
-  //     let sense = { name: senseObj.definition, value: 50, children: [] };
-  //     for (let [i, synonym] of senseObj.syns.entries()) {
-  //       sense.children.push({ name: synonym, value: i });
-  //     }
-  //     currData[0].children.push(sense);
-  //   }
+  useEffect(() => {
+    let currData = chartData;
+    // for each sense
+    // make new obj with def and synonyms
+    // push that to root node children
+    for (let senseObj of wordData.syn_list) {
+      let sense = { name: senseObj.definition, value: 50, children: [] };
+      for (let [i, synonym] of senseObj.syns.entries()) {
+        sense.children.push({ name: synonym, value: i });
+      }
+      currData[0].children.push(sense);
+    }
 
-  //   setChartData(currData);
-  // }, []);
+    setChartData(currData);
+  }, []);
 
   // const showSyns = synonyms => {
   //   return;
