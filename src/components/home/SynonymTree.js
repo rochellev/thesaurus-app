@@ -5,11 +5,11 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import "../App.css";
 
 am4core.useTheme(am4themes_animated);
-
-const SynonymTree = seriesData => {
+// try something different
+const SynonymTree = ({seriesData}) => {
   const chart = useRef(null);
   useEffect(() => {
-    // console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
+    console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",
@@ -38,7 +38,7 @@ const SynonymTree = seriesData => {
     // container.layout = "vertical";
 
     // Set data
-    series.data = seriesData.seriesData;
+    series.data = seriesData;
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
