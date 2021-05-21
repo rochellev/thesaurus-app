@@ -4,7 +4,15 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "../actions/types";
 
-export default (state = {}, action) => {
+const INITIAL_STATE = {
+  fetchBegin: null,
+  fetchSuccess: null,
+  fetchFail: null,
+  data: {},
+  treeData: []
+};
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_SYNONYMS_BEGIN:
       return { ...state, synonyms: action.payload };
