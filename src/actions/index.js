@@ -6,7 +6,7 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "./types";
 
-// currently only setting up reducer for getting data
+// hard-coded data -- for developing
 export const selectWord = word => {
   return {
     type: WORD_SELECTED,
@@ -14,26 +14,13 @@ export const selectWord = word => {
   };
 };
 
-// get data for headword
+// fetch API data, handle success/error
 export const fetchSynonymsBegin = headword => async dispatch => {
-  const response = await merriamWebster.get(
-    `/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`
-  );
-  dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
+  dispatch({ type: FETCH_SYNONYMS_BEGIN });
+  return await merriamWebster
+    .get(`/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`)
+    .then(response =>
+      dispatch({ type: FETCH_SYNONYMS_SUCCESS, payload: response.data })
+    )
+    .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
 };
-
-export const fetchSynonymsSuccess = synonyms => {
-  return { type: FETCH_SYNONYMS_SUCCESS, payload: { synonyms } };
-};
-
-export const fetchSynonymsFail = error => {
-  return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
-};
-
-// export const fetchData = query => async dispatch => {
-//   const response = await merriamWebster.get(
-//     `/umpire?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
-//   );
-//   console.log(`the response: lafjks`);
-//   dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
-// };

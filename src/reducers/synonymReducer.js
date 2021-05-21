@@ -4,10 +4,22 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "../actions/types";
 
-export default (state = {}, action) => {
+const INITIAL_STATE = {
+  loading: null,
+  error: null,
+  data: {},
+  treeData: []
+};
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_SYNONYMS_BEGIN:
-      return { ...state, synonyms: action.payload };
+      return { ...state, loading: true, error: null };
+    case FETCH_SYNONYMS_SUCCESS:
+      return { ...state, loading: false, error: null, data: action.payload };
+    case FETCH_SYNONYMS_FAIL:
+      // y/n -- override existing data when error
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
