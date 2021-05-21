@@ -6,7 +6,7 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "./types";
 
-// currently only setting up reducer for getting data
+// hard-coded data -- for developing
 export const selectWord = word => {
   return {
     type: WORD_SELECTED,
@@ -16,9 +16,7 @@ export const selectWord = word => {
 
 // fetch API data, handle success/error
 export const fetchSynonymsBegin = headword => async dispatch => {
-  // signal starting api call
   dispatch({ type: FETCH_SYNONYMS_BEGIN });
-  // changed to return this conditional sort of. rather than set a variable to response.
   return await merriamWebster
     .get(`/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`)
     .then(response =>
@@ -26,13 +24,3 @@ export const fetchSynonymsBegin = headword => async dispatch => {
     )
     .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
 };
-
-// export const fetchSynonymsSuccess = synonyms => {};
-
-// export const fetchSynonymsFail = error => {
-//   return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
-// };
-
-// export const transformData = () => {
-
-// }
