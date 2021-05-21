@@ -1,15 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useLayoutEffect, useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import "../App.css";
 
 am4core.useTheme(am4themes_animated);
-
-const SynonymTree = seriesData => {
+// try something different
+const SynonymTree = ({ seriesData }) => {
   const chart = useRef(null);
   useEffect(() => {
-    // console.log(`seriesData: ${JSON.stringify(seriesData, null, 2)}`);
+    // console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",
@@ -31,19 +31,19 @@ const SynonymTree = seriesData => {
       }
     });
 
-    // Set data
-    series.data = seriesData.seriesData;
-    // Set up data fields
-    series.dataFields.value = "value";
-    series.dataFields.name = "name";
-    series.dataFields.children = "children";
-    series.maxLevels = 2;
-
     // Create a container
     // var container = am4core.create("container", am4core.Container);
     // container.width = am4core.percent(100);
     // container.height = am4core.percent(100);
     // container.layout = "vertical";
+
+    // Set data
+    series.data = seriesData;
+    // Set up data fields
+    series.dataFields.value = "value";
+    series.dataFields.name = "name";
+    series.dataFields.children = "children";
+    series.maxLevels = 2;
 
     // Format labels
     let labelTemplate = series.nodes.template.label;

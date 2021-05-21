@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import SynonymTree from "./SynonymTree";
+import { fetchSynonymsBegin } from "../../actions";
 import merriamWebster from "../../apis/merriamWebster";
 
-const HomeView = ({ wordData }) => {
+const HomeView = ({ fetchSynonymsBegin, wordData, synonyms }) => {
   const [chartData, setChartData] = useState([
     {
       name: wordData.headword,
@@ -12,6 +13,9 @@ const HomeView = ({ wordData }) => {
   ]);
   // run initial
   useEffect(() => {
+    fetchSynonymsBegin("happy");
+  }, []);
+  useEffect(() => {
     let currData = chartData;
     // for each sense
     // make new obj with def and synonyms
@@ -19,7 +23,7 @@ const HomeView = ({ wordData }) => {
     for (let senseObj of wordData.syn_list) {
       let sense = { name: senseObj.definition, value: 50, children: [] };
       for (let [i, synonym] of senseObj.syns.entries()) {
-        sense.children.push({ name: synonym, value: i });
+        sense.children.push({ name: synonym, value: 1 });
       }
       currData[0].children.push(sense);
     }
@@ -27,25 +31,30 @@ const HomeView = ({ wordData }) => {
     setChartData(currData);
   }, []);
 
-  const fetchSynonyms = async query => {
-    const response = await merriamWebster.get(
-      `cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`
-    );
-    console.log(JSON.stringify(response, null, 2));
+  // const showSyns = synonyms => {
+  //   return;
+  // };
+  const handleSearch = () => {
+    fetchSynonymsBegin("happy");
+  };
+
+  const renderSynonymTree = chartData => {
+    return <SynonymTree seriesData={chartData} />;
   };
 
   return (
     <div>
+      <button onClick={() => handleSearch()}>fetchSynonyms</button>
       <br></br>
-      <button onClick={fetchSynonyms}>fetchSynonyms</button>
-      <SynonymTree seriesData={chartData} />
+      {renderSynonymTree(chartData)}
     </div>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    wordData: state.wordData
+    wordData: state.wordData,
+    synonyms: state.synonyms
   };
 };
-export default connect(mapStateToProps)(HomeView);
+export default connect(mapStateToProps, { fetchSynonymsBegin })(HomeView);
