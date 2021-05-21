@@ -6,10 +6,10 @@ import "../App.css";
 
 am4core.useTheme(am4themes_animated);
 // try something different
-const SynonymTree = ({seriesData}) => {
+const SynonymTree = ({ seriesData }) => {
   const chart = useRef(null);
   useEffect(() => {
-    console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
+    // console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",

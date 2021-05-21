@@ -23,7 +23,7 @@ const HomeView = ({ wordData, synonyms }) => {
     for (let senseObj of wordData.syn_list) {
       let sense = { name: senseObj.definition, value: 50, children: [] };
       for (let [i, synonym] of senseObj.syns.entries()) {
-        sense.children.push({ name: synonym, value: i });
+        sense.children.push({ name: synonym, value: 1 });
       }
       currData[0].children.push(sense);
     }
