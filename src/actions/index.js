@@ -30,10 +30,6 @@ export const fetchSynonymsFail = error => {
   return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
 };
 
-// export const fetchData = query => async dispatch => {
-//   const response = await merriamWebster.get(
-//     `/umpire?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
-//   );
-//   console.log(`the response: lafjks`);
-//   dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
-// };
+// export const transformData = () => {
+
+// } 
