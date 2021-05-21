@@ -17,7 +17,7 @@ export const selectWord = word => {
 // get data for headword
 export const fetchSynonymsBegin = headword => async dispatch => {
   const response = await merriamWebster.get(
-    `&{headword}?key=${process.env.REACT_APP_MERRIAM_WEBSTER}`
+    `/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`
   );
   dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
 };

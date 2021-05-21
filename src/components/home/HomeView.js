@@ -4,7 +4,7 @@ import SynonymTree from "./SynonymTree";
 import { fetchSynonymsBegin } from "../../actions";
 import merriamWebster from "../../apis/merriamWebster";
 
-const HomeView = ({ wordData, synonyms }) => {
+const HomeView = ({ fetchSynonymsBegin, wordData, synonyms }) => {
   const [chartData, setChartData] = useState([
     {
       name: wordData.headword,
@@ -38,11 +38,15 @@ const HomeView = ({ wordData, synonyms }) => {
     fetchSynonymsBegin("happy");
   };
 
+  const renderSynonymTree = chartData => {
+    return <SynonymTree seriesData={chartData} />;
+  };
+
   return (
     <div>
       <button onClick={() => handleSearch()}>fetchSynonyms</button>
       <br></br>
-      <SynonymTree seriesData={chartData} />
+      {renderSynonymTree(chartData)}
     </div>
   );
 };
