@@ -14,22 +14,25 @@ export const selectWord = word => {
   };
 };
 
-// get data for headword
+// fetch API data, handle success/error
 export const fetchSynonymsBegin = headword => async dispatch => {
-  const response = await merriamWebster.get(
-    `/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`
-  );
-  dispatch({ type: FETCH_SYNONYMS_BEGIN, payload: response.data });
+  // signal starting api call
+  dispatch({ type: FETCH_SYNONYMS_BEGIN });
+  // changed to return this conditional sort of. rather than set a variable to response.
+  return await merriamWebster
+    .get(`/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`)
+    .then(response =>
+      dispatch({ type: FETCH_SYNONYMS_SUCCESS, payload: response.data })
+    )
+    .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
 };
 
-export const fetchSynonymsSuccess = synonyms => {
-  return { type: FETCH_SYNONYMS_SUCCESS, payload: { synonyms } };
-};
+// export const fetchSynonymsSuccess = synonyms => {};
 
-export const fetchSynonymsFail = error => {
-  return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
-};
+// export const fetchSynonymsFail = error => {
+//   return { type: FETCH_SYNONYMS_FAIL, payload: { error } };
+// };
 
 // export const transformData = () => {
 
-// } 
+// }

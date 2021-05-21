@@ -7,7 +7,7 @@ import {
 // begin as in loading
 
 const INITIAL_STATE = {
-  fetchBegin: null,
+  loading: null,
   fetchSuccess: null,
   error: null,
   data: {},
@@ -17,11 +17,11 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_SYNONYMS_BEGIN:
-      return { ...state, fetchBegin: true, error: null };
+      return { ...state, loading: true, error: null };
     case FETCH_SYNONYMS_SUCCESS:
-      return { ...state, fetchBegin: false, error: null, data: action.payload };
+      return { ...state, loading: false, error: null, data: action.payload };
     case FETCH_SYNONYMS_FAIL:
-      return { ...state, fetchBegin: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
