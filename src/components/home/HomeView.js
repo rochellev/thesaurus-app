@@ -44,7 +44,7 @@ const HomeView = ({ fetchSynonymsBegin, wordData, synonyms }) => {
 
   return (
     <div>
-      <button onClick={() => handleSearch()}>fetchSynonyms</button>
+      <button onClick={handleSearch}>fetchSynonyms</button>
       <br></br>
       {renderSynonymTree(chartData)}
     </div>

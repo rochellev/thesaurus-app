@@ -6,6 +6,7 @@ import {
   FETCH_SYNONYMS_FAIL
 } from "./types";
 
+
 // hard-coded data -- for developing
 export const selectWord = word => {
   return {
@@ -22,15 +23,21 @@ export const fetchSynonymsBegin = headword => async dispatch => {
     .then(response => {
       // change shape
       let shapedData = [{ name: headword, children: [] }];
-      let res = response.data[0];
-      console.log(
-        `response.data[0]:\n${JSON.stringify(
-          response.data[0].meta.syns[0],
-          null,
-          2
-        )}`
-      );
-      return dispatch({ type: FETCH_SYNONYMS_SUCCESS, payload: response.data });
+      const shortDefs = response.data[0].shortDef;
+      const synonyms = response.data[0].meta.syns;
+      for (let [i, def] of shortDefs.entries()) {
+        let node = { name: def, children: [] };
+        for (let word of synonyms[i]) {
+          if (node.children.length < 10) {
+            node.children.push({ name: word, value: 1 });
+          } else {
+            break;
+          }
+        }
+        shapedData[0].children.push(node);
+      }
+      console(`shapedData:\n${JSON.stringify(shapedData, null, 2)}`);
+      return dispatch({ type: FETCH_SYNONYMS_SUCCESS, payload: shapedData });
     })
     .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
 };
