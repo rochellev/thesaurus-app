@@ -7,9 +7,18 @@ import {
 const INITIAL_STATE = {
   loading: null,
   error: null,
-  data: {},
-  treeData: []
+  data: {
+    headword: "cool",
+    treeData: []
+  }
 };
+// const INITIAL_STATE = {
+//   loading: null,
+//   error: null,
+//   data: {},
+//   treeData: [],
+//   headword: "cool"
+// };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
