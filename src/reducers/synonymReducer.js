@@ -28,15 +28,17 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_SYNONYMS_SUCCESS:
       console.log(`in FETCH_SYNONYMS_SUCCESS reducer`);
       // console.log(`action.payload[0]:  \n${JSON.stringify(action.payload[0])}`);
+      let updatedChart = toTreeData(
+        state.headword,
+        action.payload[0].shortDefs,
+        action.payload[0].meta.syns
+      );
+      console.log(`updatedChart:   \n${JSON.stringify(updatedChart, null, 2)}`);
       return {
         ...state,
         loading: false,
         error: null,
-        treeData: toTreeData(
-          state.headword,
-          action.payload[0].shortDefs,
-          action.payload[0].meta.syns
-        )
+        treeData: updatedChart
       };
     case FETCH_SYNONYMS_FAIL:
       // y/n -- override existing data when error
