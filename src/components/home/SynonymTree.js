@@ -41,7 +41,7 @@ const SynonymTree = ({ treeData, hardChart }) => {
     // container.layout = "vertical";
 
     // Set data
-    series.data = [hardChart];
+    series.data = [treeData];
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
