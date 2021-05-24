@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import synonymReducer from "./synonymReducer";
+import { Children } from "react";
 
 // returns hard-coded data,
 // eventually will use to call api i think
@@ -139,7 +140,76 @@ const wordDataReducer = () => {
   };
 };
 
+const hardChart = () => {
+  return {
+    name: "cool",
+    children: [
+      {
+        name: "having or showing a lack of friendliness or interest in others",
+        children: [
+          "aloof",
+          "antisocial",
+          "asocial",
+          "buttoned-up",
+          "cold",
+          "cold-eyed, detached",
+          "distant",
+          "dry",
+          "frosty",
+          "offish",
+          "remote",
+          "standoff"
+        ]
+      },
+      {
+        name: "free from emotional or mental agitation",
+        children: [
+          "calm",
+          "collected",
+          "composed",
+          "coolheaded",
+          "equal",
+          "level",
+          "limpid",
+          "peaceful",
+          "placid",
+          "possessed",
+          "recollected",
+          "sedate",
+          "self-composed",
+          "self-possessed",
+          "serene",
+          "smooth"
+        ]
+      },
+      {
+        name: "having a low or subnormal temperature",
+        children: [
+          "algid",
+          "arctic",
+          "bitter",
+          "bone-chilling, chill",
+          "chilly, cold",
+          "coldish",
+          "coolish",
+          "freezing",
+          "frigid",
+          "frosty",
+          "gelid",
+          "glacial",
+          "ice-cold",
+          "icy",
+          "nipping",
+          "nippy",
+          "numbing",
+          "polar"
+        ]
+      }
+    ]
+  };
+};
 export default combineReducers({
   wordData: wordDataReducer,
-  synonyms: synonymReducer
+  synonyms: synonymReducer,
+  hardChart: hardChart
 });

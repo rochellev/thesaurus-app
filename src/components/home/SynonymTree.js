@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 am4core.useTheme(am4themes_animated);
 // try something different
-const SynonymTree = ({ treeData }) => {
+const SynonymTree = ({ treeData, hardChart }) => {
   const chart = useRef(null);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const SynonymTree = ({ treeData }) => {
     // container.layout = "vertical";
 
     // Set data
-    series.data = treeData;
+    series.data = [hardChart];
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
@@ -76,7 +76,8 @@ const SynonymTree = ({ treeData }) => {
 
 const mapStateToProps = state => {
   return {
-    treeData: state.synonyms.treeData
+    treeData: state.synonyms.treeData,
+    hardChart: state.hardChart
   };
 };
 

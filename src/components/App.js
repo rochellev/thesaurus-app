@@ -5,12 +5,13 @@ import "./App.css";
 import SynonymTree from "./home/SynonymTree";
 import { fetchSynonymsBegin } from "../actions";
 
-const App = () => {
+const App = ({ fetchSynonymsBegin }) => {
   useEffect(() => {
     fetchSynonymsBegin("happy");
   }, []);
   return (
     <div className="App">
+      Hello
       <SynonymTree />
     </div>
   );

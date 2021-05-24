@@ -23,9 +23,10 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_SYNONYMS_BEGIN:
-      console.log(state.treeData)
+      console.log(`synonyms begin reducer`);
       return { ...state, loading: true, error: null };
     case FETCH_SYNONYMS_SUCCESS:
+      console.log(`in FETCH_SYNONYMS_SUCCESS reducer`);
       return {
         ...state,
         loading: false,
