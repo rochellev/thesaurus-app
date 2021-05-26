@@ -3,26 +3,20 @@ import { connect } from "react-redux";
 import SynonymTree from "./SynonymTree";
 import { fetchSynonymsBegin } from "../../actions";
 
-
 const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
-
   // run initial
-  useEffect(() => {
-    fetchSynonymsBegin("happy");
-  }, []);
-
-
+  // useEffect(() => {
+  //   fetchSynonymsBegin("happy");
+  // }, []);
 
   const handleSearch = () => {
     fetchSynonymsBegin("happy");
   };
 
-
-
   return (
     <div>
       <button onClick={handleSearch}>fetchSynonyms</button>
-      
+
       <br></br>
       <SynonymTree />
     </div>
@@ -31,7 +25,6 @@ const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
 
 const mapStateToProps = state => {
   return {
-    
     synonyms: state.synonyms
   };
 };
