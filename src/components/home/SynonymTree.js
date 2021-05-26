@@ -4,10 +4,13 @@ import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDire
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import "../App.css";
 
+import { connect } from "react-redux";
+
 am4core.useTheme(am4themes_animated);
 // try something different
-const SynonymTree = ({ seriesData }) => {
+const SynonymTree = ({ treeData, hardChart }) => {
   const chart = useRef(null);
+
   useEffect(() => {
     // console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
@@ -38,7 +41,7 @@ const SynonymTree = ({ seriesData }) => {
     // container.layout = "vertical";
 
     // Set data
-    series.data = seriesData;
+    series.data = [treeData];
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
@@ -65,10 +68,17 @@ const SynonymTree = ({ seriesData }) => {
     // set current, not sure if needed
     chart.current = x;
     return () => {
-      x.dispose();
+      x.dispose();  
     };
-  }, [seriesData]);
+  }, [treeData]);
   return <div id="chartdiv" style={{ width: "100%", height: "1000px" }}></div>;
 };
 
-export default SynonymTree;
+const mapStateToProps = state => {
+  return {
+    treeData: state.synonyms.treeData,
+    hardChart: state.hardChart
+  };
+};
+
+export default connect(mapStateToProps)(SynonymTree);
