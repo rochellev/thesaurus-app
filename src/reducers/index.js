@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
 import synonymReducer from "./synonymReducer";
-import { Children } from "react";
 
-// returns hard-coded data,
-// eventually will use to call api i think
-// returns object. exactly like data in HomeView
+
+// returns hard-coded data
 const wordDataReducer = () => {
   return {
     headword: "cool",
@@ -140,6 +138,7 @@ const wordDataReducer = () => {
   };
 };
 
+// keep -- not ready to delete just yet
 const hardChart = () => {
   return {
     name: "cool",
@@ -209,7 +208,5 @@ const hardChart = () => {
   };
 };
 export default combineReducers({
-  wordData: wordDataReducer,
   synonyms: synonymReducer,
-  hardChart: hardChart
 });
