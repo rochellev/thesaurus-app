@@ -32,7 +32,7 @@ const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
 
 const mapStateToProps = state => {
   return {
-    wordData: state.wordData,
+    
     synonyms: state.synonyms
   };
 };
