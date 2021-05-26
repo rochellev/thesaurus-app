@@ -17,15 +17,14 @@ const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
     fetchSynonymsBegin("happy");
   };
 
-  const renderSynonymTree = chartData => {
-    return <SynonymTree seriesData={chartData} />;
-  };
+
 
   return (
     <div>
       <button onClick={handleSearch}>fetchSynonyms</button>
+      
       <br></br>
-      {renderSynonymTree(chartData)}
+      <SynonymTree />
     </div>
   );
 };
