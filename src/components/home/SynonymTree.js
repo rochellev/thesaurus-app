@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -7,8 +7,8 @@ import "../App.css";
 import { connect } from "react-redux";
 
 am4core.useTheme(am4themes_animated);
-// try something different
-const SynonymTree = ({ treeData, hardChart }) => {
+
+const SynonymTree = ({ treeData }) => {
   const chart = useRef(null);
 
   useEffect(() => {
@@ -54,7 +54,6 @@ const SynonymTree = ({ treeData, hardChart }) => {
 
     labelTemplate.margin = 5;
 
-
     series.fontSize = 20;
     series.minRadius = 92;
     series.maxRadius = 100;
@@ -65,7 +64,7 @@ const SynonymTree = ({ treeData, hardChart }) => {
     );
     chart.current = x;
     return () => {
-      x.dispose();  
+      x.dispose();
     };
   }, [treeData]);
   return <div id="chartdiv" style={{ width: "100%", height: "1000px" }}></div>;
@@ -73,8 +72,7 @@ const SynonymTree = ({ treeData, hardChart }) => {
 
 const mapStateToProps = state => {
   return {
-    treeData: state.synonyms.treeData,
-    hardChart: state.hardChart
+    treeData: state.synonyms.treeData
   };
 };
 
