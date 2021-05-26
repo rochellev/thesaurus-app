@@ -1,25 +1,13 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import "./App.css";
-// import HomeView from "./home/HomeView";
-import SynonymTree from "./home/SynonymTree";
-import { fetchSynonymsBegin } from "../actions";
+import HomeView from "./home/HomeView";
 
-const App = ({ fetchSynonymsBegin }) => {
-  useEffect(() => {
-    fetchSynonymsBegin("happy");
-  }, []);
+const App = () => {
   return (
     <div className="App">
-      Hello
-      <SynonymTree />
+      <HomeView />
     </div>
   );
 };
-const mapStateToProps = state => {
-  return {
-    wordData: state.wordData
-  };
-};
 
-export default connect(mapStateToProps, { fetchSynonymsBegin })(App);
+export default App;
