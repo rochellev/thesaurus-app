@@ -12,7 +12,6 @@ const SynonymTree = ({ treeData, hardChart }) => {
   const chart = useRef(null);
 
   useEffect(() => {
-    // console.log(`seriesData:\n ${JSON.stringify(seriesData, null, 2)}`);
     // Create chart
     var x = am4core.create(
       "chartdiv",
@@ -54,8 +53,7 @@ const SynonymTree = ({ treeData, hardChart }) => {
     labelTemplate.wrap = true;
 
     labelTemplate.margin = 5;
-    // labelTemplate.marginLeft = 3;
-    // labelTemplate.marginRight = 3;
+
 
     series.fontSize = 20;
     series.minRadius = 92;
@@ -65,7 +63,6 @@ const SynonymTree = ({ treeData, hardChart }) => {
     series.nodes.template.outerCircle.filters.push(
       new am4core.DropShadowFilter()
     );
-    // set current, not sure if needed
     chart.current = x;
     return () => {
       x.dispose();  
