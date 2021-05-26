@@ -68,7 +68,7 @@ const SynonymTree = ({ treeData, hardChart }) => {
     // set current, not sure if needed
     chart.current = x;
     return () => {
-      x.dispose();
+      x.dispose();  
     };
   }, [treeData]);
   return <div id="chartdiv" style={{ width: "100%", height: "1000px" }}></div>;

@@ -27,13 +27,12 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, loading: true, error: null };
     case FETCH_SYNONYMS_SUCCESS:
       console.log(`in FETCH_SYNONYMS_SUCCESS reducer`);
-      // console.log(`action.payload[0]:  \n${JSON.stringify(action.payload[0])}`);
       let updatedChart = toTreeData(
         state.headword,
-        action.payload[0].shortDefs,
+        action.payload[0].shortdef,
         action.payload[0].meta.syns
       );
-      console.log(`updatedChart:   \n${JSON.stringify(updatedChart, null, 2)}`);
+      // console.log(`updatedChart:   \n${JSON.stringify(updatedChart, null, 2)}`);
       return {
         ...state,
         loading: false,
@@ -58,12 +57,18 @@ const newDefNode = definition => {
 };
 
 const toTreeData = (headword, shortDefs, synonyms) => {
+  // console.log(`in toTreeData`);
+  // console.log(
+  //   `headword: ${headword}\nshortDefs:\n   ${JSON.stringify(
+  //     shortDefs
+  //   )}\n synonyms:\n   ${JSON.stringify(synonyms)}`
+  // );
   let shapedData = newDefNode(headword);
   for (let [i, def] of shortDefs.entries()) {
     let currDefNode = newDefNode(def);
     currDefNode.children = synonyms[i].map(word => newSynNode(word));
     shapedData.children.push(currDefNode);
   }
-  console.log(`shapedData:   \n${JSON.stringify(shapedData, null, 2)}`);
+
   return shapedData;
 };
