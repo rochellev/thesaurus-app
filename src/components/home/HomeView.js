@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import SynonymTree from "./SynonymTree";
 import { fetchSynonymsBegin } from "../../actions";
+import SearchFrom from './SearchForm'
 
 const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
   // run initial
@@ -16,7 +17,7 @@ const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
   return (
     <div>
       <button onClick={handleSearch}>fetchSynonyms</button>
-
+      <SearchFrom />
       <br></br>
       <SynonymTree />
     </div>
