@@ -7,3 +7,6 @@ const SearchForm = ({subscription}) => {
     <Form />
   )
 }
+
+
+export default SearchForm;
