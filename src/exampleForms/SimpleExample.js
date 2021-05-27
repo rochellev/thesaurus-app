@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import { Form, FormSpy, Field } from "react-final-form";
+import { Form, Field } from "react-final-form";
 
-const SearchForm = ({ subscription }) => {
+const SimpleExample = ({ subscription }) => {
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   const onSubmit = async values => {
@@ -153,4 +153,4 @@ const SearchForm = ({ subscription }) => {
   );
 };
 
-export default SearchForm;
+export default SimpleExample;
