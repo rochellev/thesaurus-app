@@ -10,27 +10,29 @@ const SynchErrorExample = () => {
     await sleep(300);
     window.alert(JSON.stringify(values, 0, 2));
   };
+
+  const validateValues = values => {
+    const errors = {};
+    if (!values.firstName) {
+      errors.firstName = "Required";
+    }
+    if (!values.lastName) {
+      errors.lastName = "Required";
+    }
+    if (!values.age) {
+      errors.age = "Required";
+    } else if (isNaN(values.age)) {
+      errors.age = "Must be a number";
+    } else if (values.age < 18) {
+      errors.age = "Must be >18";
+    }
+    return errors;
+  };
   return (
     <Form
       onSubmit={onSubmit}
       initialValues={{ firstName: "Bob" }}
-      validate={values => {
-        const errors = {};
-        if (!values.firstName) {
-          errors.firstName = "Required";
-        }
-        if (!values.lastName) {
-          errors.lastName = "Required";
-        }
-        if (!values.age) {
-          errors.age = "Required";
-        } else if (isNaN(values.age)) {
-          errors.age = "Must be a number";
-        } else if (values.age < 18) {
-          errors.age = "Must be >18";
-        }
-        return errors;
-      }}
+      validate={values => validateValues(values)}
       render={({ handleSubmit, form, submitting, pristine, values }) => (
         <form onSubmit={handleSubmit}>
           <Field name="firstName">
