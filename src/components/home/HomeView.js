@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { SynonymTree } from "./SynonymTree";
+import { SearchBox } from "./SearchBox";
 import { fetchSynonymsBegin } from "../../actions";
-import SearchFrom from "../../exampleForms/SimpleExample";
-import SynchErrorExample from "../../exampleForms/SynchErrorExample";
 
 export const HomeView = () => {
   const dispatch = useDispatch();
 
-  const fetch = (word) => fetchSynonymsBegin(word)(dispatch);
+  const fetch = word => fetchSynonymsBegin(word)(dispatch);
 
   // run initial
   useEffect(() => {
@@ -21,8 +20,8 @@ export const HomeView = () => {
 
   return (
     <div>
+      <SearchBox />
       <button onClick={handleSearch}>fetchSynonyms</button>
-      <SynchErrorExample />
       <br></br>
       <SynonymTree />
     </div>
