@@ -18,13 +18,15 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, loading: true, error: null };
     case FETCH_SYNONYMS_SUCCESS:
       console.log(`in FETCH_SYNONYMS_SUCCESS reducer`);
+      //debugger;
       let updatedChart = toTreeData(
-        state.headword,
+        action.headword,
         action.payload[0].shortdef,
         action.payload[0].meta.syns
       );
       return {
         ...state,
+        headword: action.headword,
         loading: false,
         error: null,
         treeData: updatedChart

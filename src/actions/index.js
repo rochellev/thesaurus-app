@@ -19,9 +19,13 @@ export const fetchSynonymsBegin = headword => async dispatch => {
   console.log(`fetchSynonymsBegin invoked`);
   dispatch({ type: FETCH_SYNONYMS_BEGIN });
   return await merriamWebster
-    .get(`/cool?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`)
+    .get(`/${headword}?key=${process.env.REACT_APP_MERRIAM_WEBSTER_KEY}`)
     .then(response => {
-      return dispatch({ type: FETCH_SYNONYMS_SUCCESS, payload: response.data });
+      return dispatch({
+        type: FETCH_SYNONYMS_SUCCESS,
+        payload: response.data,
+        headword
+      });
     })
     .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
 };

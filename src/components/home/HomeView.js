@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import SynonymTree from "./SynonymTree";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { SynonymTree } from "./SynonymTree";
 import { fetchSynonymsBegin } from "../../actions";
-import SearchFrom from '../../exampleForms/SimpleExample'
-import SynchErrorExample from '../../exampleForms/SynchErrorExample'
+import SearchFrom from "../../exampleForms/SimpleExample";
+import SynchErrorExample from "../../exampleForms/SynchErrorExample";
 
-const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
+export const HomeView = () => {
+  const dispatch = useDispatch();
+
+  const fetch = (word) => fetchSynonymsBegin(word)(dispatch);
+
   // run initial
-  // useEffect(() => {
-  //   fetchSynonymsBegin("happy");
-  // }, []);
+  useEffect(() => {
+    fetch("happy");
+  }, []);
 
   const handleSearch = () => {
-    fetchSynonymsBegin("happy");
+    fetch("happy");
   };
 
   return (
@@ -25,9 +29,9 @@ const HomeView = ({ fetchSynonymsBegin, synonyms }) => {
   );
 };
 
-const mapStateToProps = state => {
+/*const mapStateToProps = state => {
   return {
     synonyms: state.synonyms
   };
 };
-export default connect(mapStateToProps, { fetchSynonymsBegin })(HomeView);
+export default connect(mapStateToProps, { fetchSynonymsBegin })(HomeView);*/
