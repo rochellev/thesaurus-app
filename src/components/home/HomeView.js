@@ -10,9 +10,9 @@ export const HomeView = () => {
   const fetch = word => fetchSynonymsBegin(word)(dispatch);
 
   // run initial
-  useEffect(() => {
-    fetch("happy");
-  }, []);
+  // useEffect(() => {
+  //   fetch("happy");
+  // }, []);
 
   const handleSearch = () => {
     fetch("happy");
