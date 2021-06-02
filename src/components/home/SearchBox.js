@@ -3,15 +3,9 @@ import { connect, useSelector, useDispatch } from "react-redux";
 
 export const SearchBox = () => {
   return (
-    <div>
-      <label>Search!</label>
-      <input
-        type="text"
-        id="headword"
-        name="headword"
-        autoFocus
-        placeholder="Synonyms for..."
-      />
+    <div className="ui large icon input">
+      <input type="text" placeholder="Search large..." />
+      <i className="search link icon"></i>
     </div>
   );
 };
