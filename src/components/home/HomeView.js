@@ -5,14 +5,15 @@ import { SearchBox } from "./SearchBox";
 import { fetchSynonymsBegin } from "../../actions";
 
 export const HomeView = () => {
+  const headword = useSelector(state => state.synonyms.headword);
   const dispatch = useDispatch();
 
   const fetch = word => fetchSynonymsBegin(word)(dispatch);
 
   // run initial
-  // useEffect(() => {
-  //   fetch("happy");
-  // }, []);
+  useEffect(() => {
+    fetch(headword);
+  }, [headword]);
 
   const handleSearch = () => {
     fetch("happy");
