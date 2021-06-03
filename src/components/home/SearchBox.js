@@ -5,8 +5,8 @@ export const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const debounceInput = term => {
     // debugger;
-    // setTimeout(term => setSearchTerm(term), 100);
-    setSearchTerm(term);
+    setTimeout(() => setSearchTerm(term), 1000);
+    // setSearchTerm(term);
   };
   return (
     <div>
