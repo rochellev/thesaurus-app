@@ -1,7 +1,8 @@
 import {
   FETCH_SYNONYMS_BEGIN,
   FETCH_SYNONYMS_SUCCESS,
-  FETCH_SYNONYMS_FAIL
+  FETCH_SYNONYMS_FAIL,
+  SET_HEADWORD
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -35,6 +36,8 @@ export default (state = INITIAL_STATE, action) => {
       // y/n -- override existing data when error
       console.log(JSON.stringify(action.payload));
       return { ...state, loading: false, error: action.payload };
+    case SET_HEADWORD:
+      return { ...state, headword: action.payload };
     default:
       return state;
   }

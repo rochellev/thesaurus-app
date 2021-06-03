@@ -3,7 +3,8 @@ import {
   WORD_SELECTED,
   FETCH_SYNONYMS_BEGIN,
   FETCH_SYNONYMS_SUCCESS,
-  FETCH_SYNONYMS_FAIL
+  FETCH_SYNONYMS_FAIL,
+  SET_HEADWORD
 } from "./types";
 
 // hard-coded data -- for developing
@@ -28,4 +29,12 @@ export const fetchSynonymsBegin = headword => async dispatch => {
       });
     })
     .catch(error => dispatch({ type: FETCH_SYNONYMS_FAIL, payload: error }));
+};
+
+// saving user input to headword
+export const setHeadword = input => {
+  return {
+    type: SET_HEADWORD,
+    payload: input
+  };
 };
