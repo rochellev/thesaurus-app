@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   loading: null,
   error: null,
   treeData: {},
-  headword: "cool"
+  headword: "happy"
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -13,7 +13,7 @@ export const HomeView = () => {
   // run initial
   useEffect(() => {
     fetch(headword);
-  }, []);
+  }, [headword]);
 
   const handleSearch = () => {
     fetch("happy");
