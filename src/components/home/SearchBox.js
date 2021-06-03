@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+// import { connect, useSelector, useDispatch } from "react-redux";
+import { debounce } from "throttle-debounce";
 
 export const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const debounceInput = term => {
-    // debugger;
-    setTimeout(() => setSearchTerm(term), 1000);
-    // setSearchTerm(term);
+    setTimeout(() => debounceSetSearchTerm(term), 550);
   };
+  const debounceSetSearchTerm = debounce(550, false, term =>
+    setSearchTerm(term)
+  );
   return (
-    <div>
+    <div style={{ marginTop: 20 }}>
       <div>The searchTerm is {searchTerm}</div>
       <div className="ui large icon input" style={{ marginTop: 15 }}>
         <input
