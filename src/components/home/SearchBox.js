@@ -5,7 +5,7 @@ import { setHeadword } from "../../actions";
 
 export const SearchBox = () => {
   // const [searchTerm, setSearchTerm] = useState("");
-  const currentHeadword = useSelector(state => state.synonyms.headword)
+  const currentHeadword = useSelector(state => state.synonyms.headword);
   const dispatch = useDispatch();
   // const set = word => setHeadword(word);
 
@@ -17,9 +17,8 @@ export const SearchBox = () => {
   );
 
   return (
-    <div style={{ marginTop: 20 }}>
-      <div>The searchTerm is {currentHeadword}</div>
-      <div className="ui large icon input" style={{ marginTop: 15 }}>
+    <div>
+      <div className="ui large icon input">
         <input
           type="text"
           placeholder="Search large..."
@@ -27,6 +26,7 @@ export const SearchBox = () => {
         />
         <i className="search link icon"></i>
       </div>
+      <div>The searchTerm is {currentHeadword}</div>
     </div>
   );
 };

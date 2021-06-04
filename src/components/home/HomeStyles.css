@@ -1,7 +1,13 @@
-.appTitle {
-  background-color: var(--vermilion);
-  margin-top: 15px;
-  width: 100px;
-  height: 70px;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
 }
 
+.app-title {
+  
+  color: var(--vermilion);
+  
+}
