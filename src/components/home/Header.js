@@ -7,11 +7,11 @@ export const Header = () => {
   return (
     <div className="header-container">
       <div className="app-title">
-       <h1>Thesaurus for Us</h1>
-       
+        Thesaurus for Us
       </div>
-      <SearchBox />
-      
+      <div className="search">
+        <SearchBox />
+      </div>
     </div>
   );
 };

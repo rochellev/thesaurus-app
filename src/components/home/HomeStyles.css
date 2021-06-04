@@ -2,12 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100vw;
-  height: 20vh;
+  height: 25vh;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
 }
 
 .app-title {
-  
+  display: flex;
   color: var(--vermilion);
-  
+  flex: 2;
+  align-items: center;
+  font-size: calc(3vw + 3vh);
+  height: 100%;
+}
+
+.search {
+  display: flex;
+  flex: 1;
 }
