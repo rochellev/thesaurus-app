@@ -28,7 +28,7 @@ export const HomeView = () => {
         
       </div>
 
-      <div>
+      <div className="synonym-tree-container">
         <SynonymTree />
       </div>
     </div>

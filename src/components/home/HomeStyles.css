@@ -10,6 +10,9 @@
 .header-container {
 }
 
+.synonym-tree-container {
+}
+
 .header {
   display: flex;
   flex-direction: column;
