@@ -4,6 +4,7 @@ import { SynonymTree } from "./SynonymTree";
 
 import { fetchSynonymsBegin } from "../../actions";
 import { Header } from "./Header";
+import "./HomeStyles.css";
 
 export const HomeView = () => {
   const headword = useSelector(state => state.synonyms.headword);
@@ -21,8 +22,8 @@ export const HomeView = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="home-view">
+      <div className="header-container">
         <Header />
         
       </div>

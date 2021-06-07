@@ -1,10 +1,21 @@
+.home-view{
+  width: 100vw;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
 .header-container {
+  
+}
+
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 25vh;
+margin-top: 5px;
+
   padding-top: 1vh;
   padding-bottom: 2vh;
 }
@@ -12,13 +23,12 @@
 .app-title {
   display: flex;
   color: var(--vermilion);
-  flex: 2;
+  height: 100%;
   align-items: center;
   font-size: calc(3vw + 3vh);
-  height: 100%;
 }
 
 .search {
   display: flex;
-  flex: 1;
+  height: 100%;
 }
