@@ -22,7 +22,12 @@
 }
 
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  /* margin-top: 2vh;
+  margin-right: 2vw;
+  margin-left: 2vw;  */
 }
 
 .App-logo {
