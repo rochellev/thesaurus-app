@@ -29,7 +29,7 @@ export const SynonymTree = () => {
 
     series.nodes.template.events.on("hit", function(event) {
       if (event.target.isActive) {
-        x.zoomToDataItem(event.target.dataItem, 2, true);
+        x.zoomToDataItem(event.target.dataItem, 1, true);
       } else {
         x.zoomOut();
       }
@@ -60,8 +60,8 @@ export const SynonymTree = () => {
     labelTemplate.fontSize = am4core.percent(150);
 
     // series.fontSize = 20;
-    series.minRadius = am4core.percent(12);
-    series.maxRadius = am4core.percent(8);
+    series.minRadius = am4core.percent(11);
+    series.maxRadius = am4core.percent(9);
     series.maxLevels = 2;
 
     // format nodes
