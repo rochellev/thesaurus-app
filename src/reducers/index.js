@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import synonymReducer from "./synonymReducer";
-
+import * as am4core from "@amcharts/amcharts4/core";
 
 // returns hard-coded data
 const wordDataReducer = () => {
@@ -139,12 +139,17 @@ const wordDataReducer = () => {
 };
 
 // keep -- not ready to delete just yet
+const val = 100;
 const hardChart = () => {
   return {
     name: "cool",
+    fixed: true,
+    x: am4core.percent(50),
+    y: am4core.percent(42),
     children: [
       {
         name: "having or showing a lack of friendliness or interest in others",
+        value: val,
         children: [
           "aloof",
           "antisocial",
@@ -162,6 +167,7 @@ const hardChart = () => {
       },
       {
         name: "free from emotional or mental agitation",
+        value: val,
         children: [
           "calm",
           "collected",
@@ -183,6 +189,7 @@ const hardChart = () => {
       },
       {
         name: "having a low or subnormal temperature",
+        value: val,
         children: [
           "algid",
           "arctic",
@@ -209,4 +216,5 @@ const hardChart = () => {
 };
 export default combineReducers({
   synonyms: synonymReducer,
+  hardChart: hardChart
 });

@@ -4,6 +4,7 @@ import {
   FETCH_SYNONYMS_FAIL,
   SET_HEADWORD
 } from "../actions/types";
+import * as am4core from "@amcharts/amcharts4/core";
 
 const INITIAL_STATE = {
   loading: null,
@@ -49,6 +50,15 @@ const newSynNode = word => {
 
 const newDefNode = definition => {
   return { name: definition, children: [] };
+};
+const newHeadWordNode = word => {
+  return {
+    name: word,
+    fixed: true,
+    x: am4core.percent(50),
+    y: am4core.percent(20),
+    children: []
+  };
 };
 
 const toTreeData = (headword, shortDefs, synonyms) => {
