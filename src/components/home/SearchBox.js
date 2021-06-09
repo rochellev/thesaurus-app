@@ -18,10 +18,10 @@ export const SearchBox = () => {
 
   return (
     <div style={{width: '50%'}}>
-      <div className="ui fluid icon input">
+      <div className="ui fluid icon input" style={{fontSize: '1.07em'}}>
         <input
           type="text"
-          placeholder="Search large..."
+          placeholder="What's another word for..."
           onChange={e => debounceInput(e.target.value)}
         />
         <i className="search link icon"></i>

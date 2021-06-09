@@ -39,6 +39,5 @@
 }
 
 .search {
-  display: flex;
-  height: 100%;
+  font-size: 13em;
 }
