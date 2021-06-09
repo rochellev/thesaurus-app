@@ -209,4 +209,5 @@ const hardChart = () => {
 };
 export default combineReducers({
   synonyms: synonymReducer,
+  hardChart: hardChart
 });

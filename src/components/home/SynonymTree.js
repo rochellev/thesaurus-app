@@ -11,6 +11,7 @@ export const SynonymTree = () => {
   const chart = useRef(null);
 
   const treeData = useSelector(state => state.synonyms.treeData);
+  const hardData = useSelector(state => state.hardChart)
 
   useEffect(() => {
     // Create chart
@@ -41,7 +42,7 @@ export const SynonymTree = () => {
     // container.layout = "vertical";
 
     // Set data
-    series.data = [treeData];
+    series.data = [hardData];
     // Set up data fields
     series.dataFields.value = "value";
     series.dataFields.name = "name";
