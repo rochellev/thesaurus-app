@@ -139,6 +139,7 @@ const wordDataReducer = () => {
 };
 
 // keep -- not ready to delete just yet
+const val = 80;
 const hardChart = () => {
   return {
     name: "cool",
@@ -148,6 +149,7 @@ const hardChart = () => {
     children: [
       {
         name: "having or showing a lack of friendliness or interest in others",
+        value: val,
         children: [
           "aloof",
           "antisocial",
@@ -165,6 +167,7 @@ const hardChart = () => {
       },
       {
         name: "free from emotional or mental agitation",
+        value: val,
         children: [
           "calm",
           "collected",
@@ -186,6 +189,7 @@ const hardChart = () => {
       },
       {
         name: "having a low or subnormal temperature",
+        value: val,
         children: [
           "algid",
           "arctic",
