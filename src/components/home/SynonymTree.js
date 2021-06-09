@@ -3,13 +3,14 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4plugins_forceDirected from "@amcharts/amcharts4/plugins/forceDirected";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import "../App.css";
-
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 am4core.useTheme(am4themes_animated);
 
-const SynonymTree = ({ treeData }) => {
+export const SynonymTree = () => {
   const chart = useRef(null);
+
+  const treeData = useSelector(state => state.synonyms.treeData);
 
   useEffect(() => {
     // Create chart
@@ -69,11 +70,3 @@ const SynonymTree = ({ treeData }) => {
   }, [treeData]);
   return <div id="chartdiv" style={{ width: "100%", height: "1000px" }}></div>;
 };
-
-const mapStateToProps = state => {
-  return {
-    treeData: state.synonyms.treeData
-  };
-};
-
-export default connect(mapStateToProps)(SynonymTree);

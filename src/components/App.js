@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HomeView from "./home/HomeView";
+import { HomeView } from "./home/HomeView";
 
 const App = () => {
   return (
