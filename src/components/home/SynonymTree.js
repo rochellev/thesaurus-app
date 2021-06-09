@@ -11,7 +11,7 @@ export const SynonymTree = () => {
   const chart = useRef(null);
 
   const treeData = useSelector(state => state.synonyms.treeData);
-  const hardData = useSelector(state => state.hardChart)
+  const hardData = useSelector(state => state.hardChart);
 
   useEffect(() => {
     // Create chart
@@ -47,22 +47,21 @@ export const SynonymTree = () => {
     series.dataFields.value = "value";
     series.dataFields.name = "name";
     series.dataFields.children = "children";
-    series.dataFields.fixed = "fixed"
+    series.dataFields.fixed = "fixed";
     series.nodes.template.propertyFields.x = "x";
     series.nodes.template.propertyFields.y = "y";
     series.dataFields.collapsed = "off";
-    
 
     // Format labels
     let labelTemplate = series.nodes.template.label;
     labelTemplate.text = "{name}";
     labelTemplate.wrap = true;
+    labelTemplate.padding = 8;
+    labelTemplate.fontSize = am4core.percent(150);
 
-    labelTemplate.margin = 5;
-
-    series.fontSize = 20;
-    series.minRadius = 92;
-    series.maxRadius = 100;
+    // series.fontSize = 20;
+    series.minRadius = am4core.percent(12);
+    series.maxRadius = am4core.percent(8);
     series.maxLevels = 2;
 
     // format nodes

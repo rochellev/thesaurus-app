@@ -139,13 +139,13 @@ const wordDataReducer = () => {
 };
 
 // keep -- not ready to delete just yet
-const val = 80;
+const val = 100;
 const hardChart = () => {
   return {
     name: "cool",
     fixed: true,
     x: am4core.percent(50),
-    y: am4core.percent(15),
+    y: am4core.percent(42),
     children: [
       {
         name: "having or showing a lack of friendliness or interest in others",
