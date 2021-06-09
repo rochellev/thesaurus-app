@@ -47,7 +47,11 @@ export const SynonymTree = () => {
     series.dataFields.value = "value";
     series.dataFields.name = "name";
     series.dataFields.children = "children";
-    series.maxLevels = 2;
+    series.dataFields.fixed = "fixed"
+    series.nodes.template.propertyFields.x = "x";
+    series.nodes.template.propertyFields.y = "y";
+    series.dataFields.collapsed = "off";
+    
 
     // Format labels
     let labelTemplate = series.nodes.template.label;
@@ -59,6 +63,7 @@ export const SynonymTree = () => {
     series.fontSize = 20;
     series.minRadius = 92;
     series.maxRadius = 100;
+    series.maxLevels = 2;
 
     // format nodes
     series.nodes.template.outerCircle.filters.push(

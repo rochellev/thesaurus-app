@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import synonymReducer from "./synonymReducer";
-
+import * as am4core from "@amcharts/amcharts4/core";
 
 // returns hard-coded data
 const wordDataReducer = () => {
@@ -142,6 +142,9 @@ const wordDataReducer = () => {
 const hardChart = () => {
   return {
     name: "cool",
+    fixed: true,
+    x: am4core.percent(50),
+    y: am4core.percent(15),
     children: [
       {
         name: "having or showing a lack of friendliness or interest in others",
