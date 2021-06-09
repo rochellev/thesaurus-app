@@ -24,13 +24,10 @@ export const HomeView = () => {
   return (
     <div className="home-view">
       <div className="header-container">
-        <div className="app-title">Thesaurus for Us</div>
-        <div className="search">
-          <SearchBox />
-        </div>
+       <Header />
       </div>
 
-      <div className="synonym-tree-container">{/* <SynonymTree /> */}</div>
+      <div className="synonym-tree-container"><SynonymTree /></div>
     </div>
   );
 };

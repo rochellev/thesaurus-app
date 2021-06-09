@@ -11,6 +11,7 @@
 .header-container {
   padding-top: 5px;
   display: flex;
+  flex-direction: column;
 }
 
 .synonym-tree-container {
@@ -28,9 +29,10 @@
 }
 
 .app-title {
-  display: flex;
+  
   color: var(--vermilion);
   height: 100%;
+  width: 100%;
   align-items: center;
   font-size: calc(3vw + 3vh);
 }

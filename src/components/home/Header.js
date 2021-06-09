@@ -6,8 +6,8 @@ import "./HomeStyles.css";
 export const Header = () => {
   return (
     <div className="header">
-      <div className="app-title">
-        Thesaurus for Us
+      <div>
+        <h1 className="app-title">Thesaurus For Us</h1>
       </div>
       <div className="search">
         <SearchBox />
