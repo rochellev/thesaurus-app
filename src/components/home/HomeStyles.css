@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-
+  width: 100%;
   padding-top: 1vh;
   padding-bottom: 2vh;
 }
@@ -35,6 +35,7 @@
   width: 100%;
   align-items: center;
   font-size: calc(3vw + 3vh);
+  padding-bottom: .5vh;
 }
 
 .search {

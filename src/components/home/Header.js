@@ -9,9 +9,9 @@ export const Header = () => {
       <div>
         <h1 className="app-title">Thesaurus For Us</h1>
       </div>
-      <div className="search">
-        <SearchBox />
-      </div>
+   
+        <SearchBox  />
+     
     </div>
   );
 };

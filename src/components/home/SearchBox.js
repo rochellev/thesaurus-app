@@ -17,8 +17,8 @@ export const SearchBox = () => {
   );
 
   return (
-    <div>
-      <div className="ui large icon input">
+    <div style={{width: '50%'}}>
+      <div className="ui fluid icon input">
         <input
           type="text"
           placeholder="Search large..."
