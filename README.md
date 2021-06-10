@@ -91,14 +91,36 @@ Merriam-Webster API
 - React-Redux is the option I chose because I think it is cleaner than putting everything in a component
 - My experience tells me it is easier to maintain React's "single source of truth" rule with Redux
 
+Solution to Integrating API data:
+
+1. How? - figuring out what code I need to write to make a HTTP request
+
+- Initially, the many ways to do HTTP requests were overwhelming: XMLHttpRequest, fetch, Axios, and JQuery
+- Through research, I found [this blog](https://levelup.gitconnected.com/all-possible-ways-of-making-an-api-call-in-plain-javascript-c0dee3c11b8b) and also [this one](https://www.smashingmagazine.com/2020/06/rest-api-react-fetch-axios/)
+- Axios is the method I chose to make HTTP requests get the synonym data I needed
+- Separate getting user input, making call, receiving data, error handling, consuming data
+
+2. Where? When? - Putting the API call somewhere that makes sense
+
+- Make call when HomeView initially rendered and when the search word changes (`headword`)
+- `useEffect` hook, invoke dispatch there to start making the request
+- `useSelector` for accessing `state.headword`
+- Error handling -- request has a start, success and fail action types to handle request outcomes
+
+3. What? - Consuming fetched data
+
+- Transformation -- amCharts expect a specific data shape, need a method to do this work
+- Reducers handle transformation
+- SynonymTree accesses `state.chartData` to render the tree graph
+
 ---
 
-Progress: app components functional, hardcoded data, minimal styling
+Progress: app components functional, hard-coded data, minimal styling
 
-  - Updating repo with screenshot of the app after finishing (version1) the main components: HomeView, SearchBox and SynonymTree
-  - The next major goal is to get all the components working together
-  - Additionally, I want to refine the app styling -- more color and fun!
-    <div align="center">
-    <img src="images/app-v1-sample-input.png" alt="version 1, layout of components is polished, app styling in progress" width="90%"/>
-     </div>
-     <br>
+- Updating repo with screenshot of the app after finishing (version1) the main components: HomeView, SearchBox and SynonymTree
+- The next major goal is to get all the components working together
+- Additionally, I want to refine the app styling -- more color and fun!
+  <div align="center">
+  <img src="images/app-v1-sample-input.png" alt="version 1, layout of components is polished, app styling in progress" width="90%"/>
+   </div>
+   <br>
