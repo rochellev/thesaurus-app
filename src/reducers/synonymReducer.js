@@ -62,7 +62,7 @@ const newHeadWordNode = word => {
 };
 
 const toTreeData = (headword, shortDefs, synonyms) => {
-  let shapedData = newDefNode(headword);
+  let shapedData = newHeadWordNode(headword);
   for (let [i, def] of shortDefs.entries()) {
     let currDefNode = newDefNode(def);
     currDefNode.children = synonyms[i].map(word => newSynNode(word));
