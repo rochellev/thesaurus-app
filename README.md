@@ -115,9 +115,13 @@ Solution to Integrating API data:
 
 ---
 
-Progress: app components functional, hard-coded data, minimal styling
+Progress: app components functional, different meanings of word represented, hard-coded data, minimal styling
 
+- Added definitions to make clear what sense of the headword a user wants to see synonyms for
 - Updating repo with screenshot of the app after finishing (version1) the main components: HomeView, SearchBox and SynonymTree
+- Root node is the search term or `headword`
+- The headword's different meanings are contained in the first set of children
+- Each definition is a parent to synonyms of the headword in that sense
 - The next major goal is to get all the components working together
 - Additionally, I want to refine the app styling -- more color and fun!
   <div align="center">
