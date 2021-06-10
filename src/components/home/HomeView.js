@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { SynonymTree } from "./SynonymTree";
-import { SearchBox } from "./SearchBox";
 import { fetchSynonymsBegin } from "../../actions";
+import { Header } from "./Header";
+import "./HomeStyles.css";
 
 export const HomeView = () => {
   const headword = useSelector(state => state.synonyms.headword);
@@ -15,23 +16,15 @@ export const HomeView = () => {
     fetch(headword);
   }, [headword]);
 
-  const handleSearch = () => {
-    fetch("happy");
-  };
-
   return (
-    <div>
-      <SearchBox />
-      <button onClick={handleSearch}>fetchSynonyms</button>
-      <br></br>
-      <SynonymTree />
+    <div className="home-view">
+      <div className="header-container">
+        <Header />
+      </div>
+
+      <div className="synonym-tree-container">
+        <SynonymTree />
+      </div>
     </div>
   );
 };
-
-/*const mapStateToProps = state => {
-  return {
-    synonyms: state.synonyms
-  };
-};
-export default connect(mapStateToProps, { fetchSynonymsBegin })(HomeView);*/

@@ -22,10 +22,15 @@
 }
 
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  /* margin-top: 2vh;
+  margin-right: 2vw;
+  margin-left: 2vw;  */
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -34,9 +39,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -58,4 +63,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

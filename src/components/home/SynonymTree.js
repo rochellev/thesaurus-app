@@ -11,6 +11,7 @@ export const SynonymTree = () => {
   const chart = useRef(null);
 
   const treeData = useSelector(state => state.synonyms.treeData);
+  // const hardData = useSelector(state => state.hardChart);
 
   useEffect(() => {
     // Create chart
@@ -28,7 +29,7 @@ export const SynonymTree = () => {
 
     series.nodes.template.events.on("hit", function(event) {
       if (event.target.isActive) {
-        x.zoomToDataItem(event.target.dataItem, 2, true);
+        x.zoomToDataItem(event.target.dataItem, 1, true);
       } else {
         x.zoomOut();
       }
@@ -37,7 +38,7 @@ export const SynonymTree = () => {
     // Create a container
     // var container = am4core.create("container", am4core.Container);
     // container.width = am4core.percent(100);
-    // container.height = am4core.percent(100);
+    // container.height = am4core.percent(50);
     // container.layout = "vertical";
 
     // Set data
@@ -46,18 +47,22 @@ export const SynonymTree = () => {
     series.dataFields.value = "value";
     series.dataFields.name = "name";
     series.dataFields.children = "children";
-    series.maxLevels = 2;
+    series.dataFields.fixed = "fixed";
+    series.nodes.template.propertyFields.x = "x";
+    series.nodes.template.propertyFields.y = "y";
+    series.dataFields.collapsed = "off";
 
     // Format labels
     let labelTemplate = series.nodes.template.label;
     labelTemplate.text = "{name}";
     labelTemplate.wrap = true;
+    labelTemplate.padding = 8;
+    labelTemplate.fontSize = am4core.percent(150);
 
-    labelTemplate.margin = 5;
-
-    series.fontSize = 20;
-    series.minRadius = 92;
-    series.maxRadius = 100;
+    // series.fontSize = 20;
+    series.minRadius = am4core.percent(11);
+    series.maxRadius = am4core.percent(9);
+    series.maxLevels = 2;
 
     // format nodes
     series.nodes.template.outerCircle.filters.push(

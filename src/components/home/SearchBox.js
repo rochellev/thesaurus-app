@@ -5,7 +5,7 @@ import { setHeadword } from "../../actions";
 
 export const SearchBox = () => {
   // const [searchTerm, setSearchTerm] = useState("");
-  const currentHeadword = useSelector(state => state.synonyms.headword)
+  const currentHeadword = useSelector(state => state.synonyms.headword);
   const dispatch = useDispatch();
   // const set = word => setHeadword(word);
 
@@ -17,12 +17,11 @@ export const SearchBox = () => {
   );
 
   return (
-    <div style={{ marginTop: 20 }}>
-      <div>The searchTerm is {currentHeadword}</div>
-      <div className="ui large icon input" style={{ marginTop: 15 }}>
+    <div style={{ width: "50%" }}>
+      <div className="ui fluid icon input" style={{ fontSize: "1.07em" }}>
         <input
           type="text"
-          placeholder="Search large..."
+          placeholder="What's another word for..."
           onChange={e => debounceInput(e.target.value)}
         />
         <i className="search link icon"></i>
