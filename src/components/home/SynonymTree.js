@@ -38,7 +38,7 @@ export const SynonymTree = () => {
     // Create a container
     // var container = am4core.create("container", am4core.Container);
     // container.width = am4core.percent(100);
-    // container.height = am4core.percent(100);
+    // container.height = am4core.percent(50);
     // container.layout = "vertical";
 
     // Set data

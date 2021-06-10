@@ -17,8 +17,8 @@ export const SearchBox = () => {
   );
 
   return (
-    <div style={{width: '50%'}}>
-      <div className="ui fluid icon input" style={{fontSize: '1.07em'}}>
+    <div style={{ width: "50%" }}>
+      <div className="ui fluid icon input" style={{ fontSize: "1.07em" }}>
         <input
           type="text"
           placeholder="What's another word for..."
@@ -26,7 +26,6 @@ export const SearchBox = () => {
         />
         <i className="search link icon"></i>
       </div>
-      <div>The searchTerm is {currentHeadword}</div>
     </div>
   );
 };
