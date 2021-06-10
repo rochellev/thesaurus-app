@@ -90,3 +90,15 @@ Merriam-Webster API
   - React-Redux, make api call in an `action`. This would require a little set up, but I have experience using this library.
 - React-Redux is the option I chose because I think it is cleaner than putting everything in a component
 - My experience tells me it is easier to maintain React's "single source of truth" rule with Redux
+
+---
+
+Progress: app components functional, hardcoded data, minimal styling
+
+  - Updating repo with screenshot of the app after finishing (version1) the main components: HomeView, SearchBox and SynonymTree
+  - The next major goal is to get all the components working together
+  - Additionally, I want to refine the app styling -- more color and fun!
+    <div align="center">
+    <img src="images/app-v1-sample-input.png" alt="version 1, layout of components is polished, app styling in progress" width="90%"/>
+     </div>
+     <br>
