@@ -6,6 +6,16 @@
 
 Thesaurus in a fun visual form. I found myself using a thesaurus daily for many thing, writing emails, my resume, and naming in code. This app offers another way to look at how synonyms grow from one word.
 
+## Running Thesaurus App Locally
+
+The following are steps to run Thesaurus App locally:
+
+1. Download project
+2. Open console to project directory
+3. Run `yarn start`
+
+The app will open in browser, and users can interact with the app.
+
 ## Software Design & Implementation
 
 Early Planning
