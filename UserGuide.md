@@ -28,9 +28,9 @@ Detailed step-by-step guide for getting the project running. After completing th
 
 This section assumes that Thesaurus App is running.
 
-### Input
+### Search for a Word
 
-To type in a word, click on the search box.
+To search for a word, type into the search box. The following is a screenshot of the window you should see.
 
 <div align="center">
    <img src="images/UserInput.png" alt="screenshot showing where to input word" width="90%"/>
