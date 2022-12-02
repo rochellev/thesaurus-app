@@ -28,7 +28,7 @@ Detailed step-by-step guide for getting the project running. After completing th
 
 This section assumes that Thesaurus App is running.
 
-### Search for a Word
+### Search for Synonyms
 
 To search for a word, type into the search box. The following is a screenshot of the window you should see.
 
