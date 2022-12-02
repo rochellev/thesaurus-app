@@ -2,7 +2,7 @@
 
 This guide will show users how to use and interact with the Thesaurus App.
 
-### Notes
+#### Notes
 
 - Users do not need familiarity with GitHub or programming to use this guide.
 - Internet access required to download repository.
