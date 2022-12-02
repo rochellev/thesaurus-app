@@ -10,10 +10,9 @@ This guide will show users how to use and interact with the Thesaurus App.
 - Directory means the folder in your computer **TK:** need more descriptive definition
 - See **TK** for more about using console
 
-## How to run Thesaurus App Locally
+## Running Thesaurus App Locally
 
-Detailed step-by-step guide for getting the project running.
-Note:
+Detailed step-by-step guide for getting the project running. After completing the following steps, Thesaurus App will be running locally and ready to use on the browser.
 
 1. Open console.
 
@@ -24,3 +23,16 @@ Note:
 
 4. Run the app by running the following command:
    `yarn start`
+
+## Using Thesaurus App
+
+This section assumes that Thesaurus App is running.
+
+### Input
+
+To type in a word, click on the search box.
+
+<div align="center">
+   <img src="images/UserInput.png" alt="screenshot showing where to input word" width="90%"/>
+    </div>
+    <br>
