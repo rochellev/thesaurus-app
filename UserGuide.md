@@ -33,6 +33,6 @@ This section assumes that Thesaurus App is running.
 To search for a word, type into the search box. The following is a screenshot of the window you should see.
 
 <div align="center">
-   <img src="images/UserInput.png" alt="screenshot showing where to input word" width="90%"/>
+   <img src="images/UserInput.png" alt="screenshot showing how to search for synonyms" width="90%"/>
     </div>
     <br>
